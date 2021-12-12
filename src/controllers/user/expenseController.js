@@ -112,13 +112,13 @@ export async function createExpense(data, user_id) {
 export async function getExpenses(query, user_id) {
   logger.debug("getting expenses...");
   try {
-    let expenses = await Expense.find({ user: user_id });
+    let expenses = await Expense.find({ user: user_id }).populate("category");
 
     if (query.category_id) {
       expenses = await Expense.find({
         user: user_id,
         category: query.category_id,
-      });
+      }).populate("category");
     }
 
     return {

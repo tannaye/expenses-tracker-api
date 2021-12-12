@@ -3,9 +3,9 @@ import multer from "multer";
 import multerS3 from "multer-s3";
 
 aws.config.update({
-    secretAccessKey: process.env.AWS_SECRET_KEY,
-    accessKeyId: process.env.AWS_ACCESS_KEY,
-    region: "us-east-2",
+  secretAccessKey: process.env.AWS_SECRET_KEY,
+  accessKeyId: process.env.AWS_ACCESS_KEY,
+  region: "us-east-2",
 });
 
 const s3 = new aws.S3();
@@ -30,19 +30,19 @@ const s3 = new aws.S3();
 // };
 
 var upload = multer({
-    storage: multerS3({
-        acl: "public-read",
-        s3: s3,
-        bucket: "test-bucket", // change this in your project
-        metadata: function (req, file, cb) {
-            cb(null, { fieldName: file.fieldname });
-        },
-        key: function (req, file, cb) {
-            cb(null, Date.now().toString() + "-" + file.originalname);
-        },
-    }),
-    limits: { fileSize: 1024 * 1024 * 5 },
-    // fileFilter: fileFilter,
+  storage: multerS3({
+    acl: "public-read",
+    s3: s3,
+    bucket: "test-bucket", // change this in your project
+    metadata: function (req, file, cb) {
+      cb(null, { fieldName: file.fieldname });
+    },
+    key: function (req, file, cb) {
+      cb(null, Date.now().toString() + "-" + file.originalname);
+    },
+  }),
+  limits: { fileSize: 1024 * 1024 * 5 },
+  // fileFilter: fileFilter,
 });
 
 export default upload;

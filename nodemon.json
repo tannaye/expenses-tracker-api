@@ -5,11 +5,11 @@
     "MONGO_DEFAULT_DATABASE": "test",
     "PORT": "3400",
     "NODE_ENV": "development",
-    "JWT_SECRET": "my-ultra-secure-and-ultra-long-secret",
-    "CRYPTR_CODE": "my-tannaye-longest-secret",
-    "SENDGRID": "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",
-    "AWS_SECRET_KEY": "Azeuf+oOdz23t9Ba0C1SmeQKcb3W2BCQzUYkedBmk",
-    "AWS_ACCESS_KEY": "AKIAV4MEYMPEAZXIX6RU",
+    "JWT_SECRET": "my--secure-and--long-secret",
+    "CRYPTR_CODE": "my-longest-secret",
+    "SENDGRID": "",
+    "AWS_SECRET_KEY": "",
+    "AWS_ACCESS_KEY": "",
     "BASE_URL": "base_url",
     "PAYSTACK": "paystack-key"
   }

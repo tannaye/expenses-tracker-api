@@ -120,13 +120,27 @@ export async function getExpenses(query, user_id) {
         category: query.category_id,
       }).populate("category");
     }
+    if (query.limit) {
+      expenses = await Expense.find({ user: user_id })
+        .populate("category")
+        .limit(parseInt(query.limit));
+    }
+
+    let total = 0;
+
+    expenses.map((data) => {
+      total += data.amount;
+    });
 
     return {
       code: 200,
       status: "success",
       error: false,
       message: "expense retrieved successfully",
-      data: expenses,
+      data: {
+        expenses,
+        total,
+      },
     };
   } catch (e) {
     logger.error("🔥 error: %o", e);

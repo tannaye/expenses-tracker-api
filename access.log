@@ -8,3 +8,5 @@
 ::1 - - [12/Dec/2021:12:27:37 +0000] "GET /api/v1/expense/categoey HTTP/1.1" 404 162 "-" "PostmanRuntime/7.28.4"
 ::1 - - [12/Dec/2021:12:27:42 +0000] "GET /api/v1/expense/category HTTP/1.1" 404 162 "-" "PostmanRuntime/7.28.4"
 ::1 - - [12/Dec/2021:14:02:10 +0000] "GET /api/v1/expense/category HTTP/1.1" 404 162 "-" "PostmanRuntime/7.28.4"
+::1 - - [12/Dec/2021:21:25:09 +0000] "GET /api/v1//expense HTTP/1.1" 404 154 "-" "PostmanRuntime/7.28.4"
+::1 - - [12/Dec/2021:21:25:34 +0000] "GET /api/v1//expense HTTP/1.1" 404 154 "-" "PostmanRuntime/7.28.4"

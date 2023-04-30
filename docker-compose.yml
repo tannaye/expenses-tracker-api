@@ -1,0 +1,22 @@
+version: "3"
+
+services:
+  db:
+    image: mongo:latest
+    ports:
+      - 27017:27017
+    env_file:
+      - config.env
+
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3400:3400"
+    volumes:
+      - .:/code
+    env_file:
+      - config.env
+    depends_on:
+      - db
